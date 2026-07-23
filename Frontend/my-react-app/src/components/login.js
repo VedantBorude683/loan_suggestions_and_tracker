@@ -231,7 +231,7 @@ const Login = () => {
                   <span className="checkmark"></span>
                   Remember me
                 </label>
-                <a href="#" className="forgot-link" onClick={(e) => {
+                <a href="/forgot" className="forgot-link" onClick={(e) => {
                   e.preventDefault();
                   setShowForgot(true);
                 }}>Forgot Password?</a>
@@ -329,7 +329,7 @@ const Login = () => {
               </motion.button>
 
               <p className="auth-footer-text">
-                <a href="#" onClick={(e) => { 
+                <a href="/login" onClick={(e) => { 
                   e.preventDefault(); 
                   setShowForgot(false); 
                   setForgotStep(1);

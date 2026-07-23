@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import { Coffee, Car, Home, ShoppingBag, Zap, CreditCard } from "lucide-react";
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from "recharts";
+import { Coffee, Car, ShoppingBag, Zap, CreditCard } from "lucide-react";
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from "recharts";
 
 function Transactions() {
   const [groupedTransactions, setGroupedTransactions] = useState({});

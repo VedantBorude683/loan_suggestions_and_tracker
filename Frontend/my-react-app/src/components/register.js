@@ -176,7 +176,7 @@ const Register = () => {
                 <label className="checkbox-container">
                   <input type="checkbox" required />
                   <span className="checkmark"></span>
-                  I agree to the <a href="#" className="forgot-link">Terms & Conditions</a>
+                  I agree to the <a href="/terms" className="forgot-link">Terms & Conditions</a>
                 </label>
               </div>
 

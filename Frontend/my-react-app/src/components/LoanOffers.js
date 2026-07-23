@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, CreditCard, ArrowRight, ShieldCheck, Banknote, Search, SlidersHorizontal, Percent, TrendingUp, Sparkles, MessageSquare } from "lucide-react";
+import { Zap, ArrowRight, ShieldCheck, Banknote, Search, SlidersHorizontal, Sparkles } from "lucide-react";
 import axios from "axios";
 import "./dashboard.css";
 
