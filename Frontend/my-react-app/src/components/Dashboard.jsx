@@ -65,7 +65,7 @@ const Dashboard = () => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
     if (storedUser && storedUser.id) {
       console.log("🔔 Notification Socket: Connecting...");
-      const socket = io("http://localhost:8080");
+      const socket = io("https://finance-backend-3hw9.onrender.com");
 
       socket.on("connect", () => {
         console.log("🔔 Notification Socket: Connected! ✅");
@@ -111,7 +111,7 @@ const Dashboard = () => {
   const fetchBudget = async () => {
     try {
       const month = new Date().toISOString().slice(0, 7); // YYYY-MM
-      const res = await fetch(`http://localhost:8080/api/budget/${month}`, {
+      const res = await fetch(`https://finance-backend-3hw9.onrender.com/api/budget/${month}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
@@ -133,7 +133,7 @@ const Dashboard = () => {
       if (storedUser) {
         try { userId = JSON.parse(storedUser).id; } catch (e) { }
       }
-      const res = await fetch(`http://127.0.0.1:5001/api/alerts?userId=${userId}`);
+      const res = await fetch(`https://finance-ai-service-9gev.onrender.com/api/alerts?userId=${userId}`);
       if (res.ok) {
         const data = await res.json();
         setAlerts(data.alerts || []);
@@ -145,7 +145,7 @@ const Dashboard = () => {
 
   const fetchTransactions = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/transactions", {
+      const res = await fetch("https://finance-backend-3hw9.onrender.com/api/transactions", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
@@ -178,7 +178,7 @@ const Dashboard = () => {
 
     try {
       const storedUser = JSON.parse(localStorage.getItem("user"));
-      const res = await fetch("http://localhost:8080/api/auth/update-credit-score", {
+      const res = await fetch("https://finance-backend-3hw9.onrender.com/api/auth/update-credit-score", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId: storedUser.id, creditScore: Number(tempScore) })
@@ -249,7 +249,7 @@ const Dashboard = () => {
     setIsGenerating(true);
     try {
       const storedUser = JSON.parse(localStorage.getItem("user"));
-      const res = await fetch("http://127.0.0.1:5001/api/generate-report", {
+      const res = await fetch("https://finance-ai-service-9gev.onrender.com/api/generate-report", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

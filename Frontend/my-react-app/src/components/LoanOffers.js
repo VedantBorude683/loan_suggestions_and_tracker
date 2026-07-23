@@ -20,7 +20,7 @@ const LoanOffers = () => {
     try {
       // Simulate deep AI processing
       await new Promise(r => setTimeout(r, 800));
-      const res = await axios.post("http://localhost:8080/api/loan/loan-suggestions", {
+      const res = await axios.post("https://finance-backend-3hw9.onrender.com/api/loan/loan-suggestions", {
         amount, cibil, tenure, type
       });
       setLoans(res.data);

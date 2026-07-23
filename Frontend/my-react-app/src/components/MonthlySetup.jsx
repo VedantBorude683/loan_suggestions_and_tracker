@@ -13,7 +13,7 @@ function MonthlySetup() {
     if (!month) return;
     const checkExistingBudget = async () => {
       try {
-        const res = await fetch(`http://localhost:8080/api/budget/${month}`, {
+        const res = await fetch(`https://finance-backend-3hw9.onrender.com/api/budget/${month}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         });
         if (res.ok) {
@@ -62,7 +62,7 @@ function MonthlySetup() {
     const data = { month, income: Number(income), expenses, totalExpense };
 
     try {
-      const res = await fetch("http://localhost:8080/api/budget", {
+      const res = await fetch("https://finance-backend-3hw9.onrender.com/api/budget", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

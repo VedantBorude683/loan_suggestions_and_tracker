@@ -24,7 +24,7 @@ function Transactions() {
   const loadData = useCallback(async () => {
     try {
       // 1. Fetch Transactions
-      const response = await fetch("http://localhost:8080/api/transactions", {
+      const response = await fetch("https://finance-backend-3hw9.onrender.com/api/transactions", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       });
       const data = await response.json();
@@ -48,7 +48,7 @@ function Transactions() {
       setGroupedTransactions(grouped);
 
       // 2. Fetch Budget Array to get limits
-      const budgetRes = await fetch("http://localhost:8080/api/budget", {
+      const budgetRes = await fetch("https://finance-backend-3hw9.onrender.com/api/budget", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       });
 
@@ -86,7 +86,7 @@ function Transactions() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/api/transactions", {
+      const response = await fetch("https://finance-backend-3hw9.onrender.com/api/transactions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -106,7 +106,7 @@ function Transactions() {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:8080/api/transactions/${id}`, {
+      await fetch(`https://finance-backend-3hw9.onrender.com/api/transactions/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       });

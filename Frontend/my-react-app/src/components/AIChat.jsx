@@ -42,13 +42,13 @@ const AIChat = () => {
         formData.append('userId', userId);
         formData.append('file', selectedFile);
 
-        res = await fetch('http://127.0.0.1:5001/api/chat', {
+        res = await fetch('https://finance-ai-service-9gev.onrender.com/api/chat', {
           method: 'POST',
           body: formData
         });
         setSelectedFile(null); // Clear file after send
       } else {
-        res = await fetch('http://127.0.0.1:5001/api/chat', {
+        res = await fetch('https://finance-ai-service-9gev.onrender.com/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ message: userMsg, userId })

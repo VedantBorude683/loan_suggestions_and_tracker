@@ -29,7 +29,7 @@ function LoanPage() {
       // Small simulated delay for premium feel
       setTimeout(async () => {
         const res = await axios.post(
-          "http://localhost:8080/api/loan/loan-suggestions",
+          "https://finance-backend-3hw9.onrender.com/api/loan/loan-suggestions",
           { amount, cibil, tenure, type }
         );
         setLoans(res.data);
